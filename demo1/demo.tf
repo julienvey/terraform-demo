@@ -8,6 +8,6 @@ provider "aws" {
 # Create a server
 resource "aws_instance" "web" {
   ami = "ami-e4ff5c93"
-  instance_type = "t2.small"
+  instance_type = "t2.micro"
   key_name = "julien-macbook-pro"
 }

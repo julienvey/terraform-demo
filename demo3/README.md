@@ -4,7 +4,6 @@ terraform apply -var-file ../aws.tfvars
 
 > Instance created
 
-terraform plan -var-file ../aws.tfvars
+> Get IP in the browser
 
-> See nothing need to be changed
-> aws console
+terraform destroy -var-file ../aws.tfvars

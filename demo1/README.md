@@ -3,27 +3,27 @@
 terraform apply -var-file ../aws.tfvars
 
 > Instance created
+
 > Show AWS Web UI
-
-terraform destroy -var-file ../aws.tfvars
-
-> Back to the slides
 
 # Step 2
 
-terraform apply -var-file ../aws.tfvars
+terraform show
+
+# Step 3
 
 terraform plan -var-file ../aws.tfvars
 
-> See nothing need to be changed
-> Change flavor_name
+> Update instance_type
 
 terraform plan -var-file ../aws.tfvars
 
-> Change will be made
-
 terraform apply -var-file ../aws.tfvars
 
-> Show AWS Web UI
+# Step 4
+
+terraform plan -destroy -var-file ../aws.tfvars
 
 terraform destroy -var-file ../aws.tfvars
+
+> Show AWS Web UI

@@ -2,12 +2,12 @@
 provider "aws" {
   access_key = "${var.aws_access_key}"
   secret_key = "${var.aws_secret_key}"
-  region = "eu-central-1"
+  region = "eu-west-1"
 }
 
 # Create a server
 resource "aws_instance" "web" {
-  ami = "ami-accff2b1"
+  ami = "ami-47a23a30"
   instance_type = "t2.micro"
   key_name = "${var.key_name}"
   connection {
@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
     key_file = "${var.key_file}"
   }
   provisioner "remote-exec" {
-    inline = ["sudo apt-get install nginx -y", "sudo service nginx start"]
+    inline = ["sudo apt-get update", "sudo apt-get install nginx -y", "sudo service nginx start"]
   }
   tags {
     Name = "front"
